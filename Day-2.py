@@ -1,14 +1,14 @@
 #starting the second day.......
 
-i=1
-while (i<=6):
-	if(i==5):
-		continue
-	else:
-		if(i==4):
-			break
-	print(i)
-	i = i+1
+#i=1
+#while (i<=6):
+#	if(i==5):
+#		continue
+#	else:
+#		if(i==4):
+#			break
+#	print(i)
+#	i = i+1
 
 
 #################################################
@@ -54,3 +54,58 @@ print(f.read(6)) #1= H , 2= E,3= l,4= l,5= o,6= !
 f.close()
 
 ############################################################################################
+#To write to an existing file, you must add a parameter to the open() function:
+
+#"a" - Append - will append to the *****end of the file*****
+
+#"w" - Write - will **overwrite**any existing content
+ 
+# 1st open the file for appendig
+print("\n")
+f = open("demo.txt","a")
+f.write("\nNOW I ADDED THIS TEXT TO LAST OF FILE ! LOL !")
+f.close()
+
+#2nd open the file for reading again
+f = open("demo.txt","r")
+print(f.read())
+print("\n")
+f.close()
+#################################################################################
+
+#To delete a file, you must import the OS module, and run its os.remove() function:
+import os
+if os.path.exists("demofile.txt"):
+	os.remove("demofile.txt")
+else:
+	print("THE FILE DOES NOT EXIST\n")
+
+#to write something for code difficulty
+f = open("demo.txt")
+for line in f:
+	line = line.rstrip()
+	if not line.startswith('Hello!'):
+		continue #if the line is not starting with "Hello!" then we will skip that line
+	print(line)
+f.close()
+
+print("\n")
+
+f = open("demo.txt")
+for line in f:
+ 	line = line.rstrip()
+ 	if not "Hello!" in line:
+ 		print(line)
+ 	else:
+ 		continue
+f.close()
+
+################################################################################33333
+
+#printing in line using string + integer $$$$$$$$$$$$$$$$$$$$$$$
+print("\n")
+x = 5
+a = "yash jain is "
+
+print(a,end=" ")
+print(x)
